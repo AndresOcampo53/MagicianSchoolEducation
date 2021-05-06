@@ -1,0 +1,72 @@
+<div class="Tittle">
+    <h6>Listado de Alumnos</h6>
+</div>
+
+
+<div class="row row-cols-2 row-cols-lg-4 g-2g-lg-3" id="house-button">
+    <div class="col">
+        <div class="col">
+            <img src="assets/img/gryffindor.png" width="200" height="210">
+            <div class="col" id="count">
+                <h1>{{countGryffindor}}</h1>
+            </div>
+        </div>
+        <button (click)="getCharactersHouse('Gryffindor')" type="button" class="btn btn-secondary">Gryffindor</button>
+    </div>
+    <div class="col">
+        <div class="col">
+            <img src="assets/img/Slytherin.png" width="200" height="210">
+            <div class="col" id="count">
+                <h1>{{countSlytherin}}</h1>
+            </div>
+        </div>
+        <button (click)="getCharactersHouse('Slytherin')" type="button" class="btn btn-secondary">Slytherin</button>
+    </div>
+    <div class="col">
+        <div class="col">
+            <img src="assets/img/Ravenclaw.png" width="200" height="210">
+            <div class="col" id="count">
+                <h1>{{countRavenclaw}}</h1>
+            </div>
+        </div>
+        <button (click)="getCharactersHouse('Ravenclaw')" type="button" class="btn btn-secondary">Ravenclaw</button>
+    </div>
+    <div class="col">
+        <div class="col">
+            <img src="assets/img/Hufflepuff.png" width="200" height="210">
+            <div class="col" id="count">
+                <h1>{{countHufflepuff}}</h1>
+            </div>
+        </div>
+        <button (click)="getCharactersHouse('Hufflepuff')" type="button" class="btn btn-secondary">Hufflepuff</button>
+    </div>
+
+</div>
+
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+        <form class="d-flex">
+            <input name="searchInput" type="search" placeholder="Search by Name" size="50" #searchName>
+            <button (click)="searchMembers(searchName.value)" type="submit" class="btn btn-secondary">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card-group">
+        <div class="row">
+            <div class="card"  *ngFor="let character of hogwartsCharacters">
+                <img src={{character.image}} class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{character.name}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{character.house}}</li>
+                    <li class="list-group-item">{{character.ancestry}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="sortByName()" type="button" class="btn btn-secondary" id="searchbtn">Sort by Name</button>
+</div>

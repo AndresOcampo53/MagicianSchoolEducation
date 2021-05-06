@@ -1,0 +1,7 @@
+{
+    "/api/characters/*":{
+        "target": "http://hp-api.herokuapp.com",
+        "secure": false,
+        "changeOrigin": true
+        }
+}
