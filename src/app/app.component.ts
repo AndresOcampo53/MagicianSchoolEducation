@@ -71,6 +71,8 @@ export class AppComponent {
     this.hogwartsCharacters.sort((a,b) => a.name.localeCompare(b.name))
   }
 
+
+
   ngOnInit() {
     this.getAllCharacters()
     this.countMembers()
